@@ -4,6 +4,8 @@ import 'package:billSplit/screens/editPage.dart';
 import 'package:flutter/material.dart';
 import 'splitPage.dart';
 
+Color _colorContainer = Colors.blue;
+
 class NameClass extends StatelessWidget {
   List<String> foodName = [];
   List<double> foodPrice = [];
@@ -11,18 +13,29 @@ class NameClass extends StatelessWidget {
   List<double> foodTotalAfterTax = [];
   List<String> foodEatenBy = [];
   NameClass(
-      {this.foodName,
-      this.foodPrice,
-      this.foodQuantity,
-      this.foodTotalAfterTax,
-      this.foodEatenBy});
+      {required this.foodName,
+      required this.foodPrice,
+      required this.foodQuantity,
+      required this.foodTotalAfterTax,
+      required this.foodEatenBy});
 
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+  // Widget build(BuildContext context) {
+
+  // }
 }
 
 class FoodDetails extends StatefulWidget {
-  FoodDetails({this.amt, this.disc, this.service, this.namesList});
+  FoodDetails(
+      {required this.amt,
+      required this.disc,
+      required this.service,
+      required this.namesList});
 
   final String amt;
   final double disc;
@@ -213,8 +226,12 @@ class FoodDetailsState extends State<FoodDetails> {
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      inputTextField(45, 160, costControllor,
-                                          TextInputType.numberWithOptions(decimal: true)),
+                                      inputTextField(
+                                          45,
+                                          160,
+                                          costControllor,
+                                          TextInputType.numberWithOptions(
+                                              decimal: true)),
                                     ],
                                   ),
                                   Column(
@@ -274,58 +291,64 @@ class FoodDetailsState extends State<FoodDetails> {
                                           Material(
                                             color:
                                                 Color(Colors.transparent.value),
-                                            child: InkWell(
-                                              splashColor: Colors.blueAccent,
-                                              onTap: () {
-                                                setState(
-                                                  () {
-                                                    _pressed = !_pressed;
-                                                    if (listOfNameThatHasEaten
-                                                        .contains(name)) {
-                                                      listOfNameThatHasEaten
-                                                          .remove(name);
-                                                    } else {
-                                                      listOfNameThatHasEaten
-                                                          .add(name);
-                                                    }
-                                                  },
-                                                );
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.fromLTRB(
-                                                        10, 10, 10, 10),
-                                                child: FittedBox(
-                                                  fit: BoxFit.fitWidth,
-                                                  child: Container(
-                                                    padding: EdgeInsets.all(5),
-                                                    decoration: BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              40.0),
-                                                      color: Color.fromRGBO(
-                                                          193, 193, 193, 100),
-                                                    ),
-                                                    child: Padding(
+                                            child: Ink(
+                                              child: InkWell(
+                                                splashColor: Colors.blueAccent,
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(40.0)),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.fromLTRB(
+                                                          10, 10, 10, 10),
+                                                  child: FittedBox(
+                                                    fit: BoxFit.fitWidth,
+                                                    child: Container(
                                                       padding:
-                                                          const EdgeInsets.only(
-                                                              left: 10,
-                                                              right: 10,
-                                                              top: 5,
-                                                              bottom: 5),
-                                                      child: Center(
-                                                        child: Text(
-                                                          name,
-                                                          style: TextStyle(
-                                                              fontSize: 20,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w900),
+                                                          EdgeInsets.all(5),
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(40.0),
+                                                        color:
+                                                            Colors.blueAccent,
+                                                      ),
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                left: 10,
+                                                                right: 10,
+                                                                top: 5,
+                                                                bottom: 5),
+                                                        child: Center(
+                                                          child: Text(
+                                                            name,
+                                                            style: TextStyle(
+                                                                fontSize: 20,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w900),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
+                                                onTap: () {
+                                                  setState(
+                                                    () {
+                                                      _pressed = !_pressed;
+                                                      if (listOfNameThatHasEaten
+                                                          .contains(name)) {
+                                                        listOfNameThatHasEaten
+                                                            .remove(name);
+                                                      } else {
+                                                        listOfNameThatHasEaten
+                                                            .add(name);
+                                                      }
+                                                    },
+                                                  );
+                                                },
                                               ),
                                             ),
                                           ),
@@ -339,13 +362,11 @@ class FoodDetailsState extends State<FoodDetails> {
                               ),
                               ElevatedButton(
                                 onPressed: () {
-                                  
                                   // If quantity is empty, set it to 1
                                   if (qtyControllor.text == '') {
                                     qtyControllor.text = '1';
                                   }
                                   // If quantity is empty, show a dialog box
-                                  
 
                                   double finalAmt;
                                   finalAmt = double.parse(costControllor.text) +
@@ -447,23 +468,36 @@ class FoodDetailsState extends State<FoodDetails> {
   ) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
-      child: SizedBox(
-        height: h,
-        width: w,
-        child: TextField(
-          textCapitalization: TextCapitalization.sentences,
-          keyboardType: type,
-          controller: control,
-          style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
-          textAlign: TextAlign.center,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(10),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(40.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40.0),
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [
+              Color.fromARGB(235, 69, 62, 194),
+              Color.fromARGB(235, 62, 45, 146),
+            ],
+          ),
+        ),
+        child: SizedBox(
+          height: h,
+          width: w,
+          child: TextField(
+            textCapitalization: TextCapitalization.sentences,
+            keyboardType: type,
+            controller: control,
+            style: TextStyle(
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
+            textAlign: TextAlign.center,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.all(10),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(40.0),
+              ),
+              filled: true,
+              // fillColor: Color.fromRGBO(76, 76, 76, 100),
             ),
-            filled: true,
-            fillColor: Color.fromRGBO(76, 76, 76, 100),
           ),
         ),
       ),
@@ -476,7 +510,11 @@ class FoodCardTitle extends StatelessWidget {
   final double cost;
   final int qty;
   final List<String> eatenBy;
-  FoodCardTitle({this.item, this.cost, this.qty, this.eatenBy});
+  FoodCardTitle(
+      {required this.item,
+      required this.cost,
+      required this.qty,
+      required this.eatenBy});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -537,5 +575,9 @@ class Task {
   final double cost;
   final int qty;
   final String eatenBy;
-  Task({this.name, this.cost, this.qty, this.eatenBy});
+  Task(
+      {required this.name,
+      required this.cost,
+      required this.qty,
+      required this.eatenBy});
 }

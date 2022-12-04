@@ -19,8 +19,8 @@ version: 1.0.0+1
 
 
 environment:
-  # sdk: ">=2.17.0 <3.0.0"
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
+  # sdk: ">=2.8.0 <3.0.0"
 
 module:
   androidX: true # Add this line.
@@ -29,8 +29,8 @@ module:
 dependencies:
   flutter_native_splash: ^2.2.11
   provider:
-  firebase_core: ^1.24.0 
-  firebase_analytics: ^9.3.8
+  # firebase_core: ^1.24.0 
+  # firebase_analytics: ^9.3.8
   flutter:
     sdk: flutter
   camera:
@@ -43,6 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.5
   numberpicker: ^2.1.1
   http: ^0.13.5
+  video_player: ^2.4.8
 
 dev_dependencies:
   flutter_launcher_icons: "^0.10.0"

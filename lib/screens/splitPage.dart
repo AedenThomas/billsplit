@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 
 class SplitPage extends StatefulWidget {
   SplitPage(
-      {this.amt,
-      this.disc,
-      this.service,
-      this.namesList,
-      this.foodDetails,
-      this.foodEatenBy});
+      {required this.amt,
+      required this.disc,
+      required this.service,
+      required this.namesList,
+      required this.foodDetails,
+      });
   final String amt;
   final double disc;
   final int service;
   final List namesList;
   final List foodDetails;
-  final List foodEatenBy;
+  // final List foodEatenBy;
 
   @override
   State<SplitPage> createState() => _SplitPageState();
@@ -26,10 +26,10 @@ class _SplitPageState extends State<SplitPage> {
   final costControllor = TextEditingController();
   final qtyControllor = TextEditingController();
   final namesControllor = TextEditingController();
-  double costAfterDivison;
+  late double costAfterDivison;
   double fullTotal = 0.0;
   double aFullTotal = 0.0;
-  num totalCost = 0;
+  double totalCost = 0;
   int index = 0;
 
   List<double> totalCostArr = [];

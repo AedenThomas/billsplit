@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class editPage extends StatefulWidget {
-  editPage({this.food, this.namesList});
+  editPage({required this.food, required this.namesList});
   final List food;
   List<dynamic> namesList = [];
 
@@ -15,11 +15,11 @@ class editPage extends StatefulWidget {
 
 class _editPageState extends State<editPage> {
   //  final amtControllor = TextEditingController();
-  TextEditingController amtControllor;
-  TextEditingController itemControllor;
-  TextEditingController qtyControllor;
-  TextEditingController eatenByControllor;
-  List<String> listOfNameThatHasEaten;
+  late TextEditingController amtControllor;
+  late TextEditingController itemControllor;
+  late TextEditingController qtyControllor;
+  late TextEditingController eatenByControllor;
+  late List<String> listOfNameThatHasEaten;
   bool _pressed = false;
 
   @override
@@ -131,12 +131,12 @@ class _editPageState extends State<editPage> {
                                             IntegerExample(
                                                 qty: widget.food.first.qty),
                                             Container(
-                                              child: ElevatedButton(
-                                                onPressed: () {
-                                                  // Update the number in the database
-                                                },
-                                              ),
-                                            )
+                                                // child: ElevatedButton(
+                                                //   onPressed: () {
+                                                //     // Update the number in the database
+                                                //   },
+                                                // ),
+                                                )
                                           ],
                                         ),
                                       );
@@ -232,9 +232,6 @@ class _editPageState extends State<editPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 10, 20, 30),
       child: TextFormField(
-        validator: (val) {
-          return val.isEmpty ? 'please provide a valid value' : null;
-        },
         textCapitalization: TextCapitalization.sentences,
         keyboardType: type,
         controller: control,
@@ -267,7 +264,7 @@ class _editPageState extends State<editPage> {
 
 class IntegerExample extends StatefulWidget {
   int qty;
-  IntegerExample({this.qty});
+  IntegerExample({required this.qty});
   @override
   IntegerExampleState createState() => IntegerExampleState();
 }
