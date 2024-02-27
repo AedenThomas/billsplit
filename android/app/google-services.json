@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "1001375083448",
+    "firebase_url": "https://agtha-d6e45.firebaseio.com",
+    "project_id": "agtha-d6e45",
+    "storage_bucket": "agtha-d6e45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001375083448:android:78689cceba566f7b25fd4d",
+        "android_client_info": {
+          "package_name": "com.aeden.billsplit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001375083448-2eqmslhdisj275huaovep4ihgvs9326t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXYVeH0vCRZUKCXQyEfH3vF3yaAQ4C4sU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001375083448-2eqmslhdisj275huaovep4ihgvs9326t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1001375083448-0k3b0oq5f25hl0efkhpkqeejdrhe93on.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.agtha"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001375083448:android:30e0cee203245ecc25fd4d",
+        "android_client_info": {
+          "package_name": "com.example.agtha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001375083448-2eqmslhdisj275huaovep4ihgvs9326t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXYVeH0vCRZUKCXQyEfH3vF3yaAQ4C4sU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001375083448-2eqmslhdisj275huaovep4ihgvs9326t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1001375083448-0k3b0oq5f25hl0efkhpkqeejdrhe93on.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.agtha"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
